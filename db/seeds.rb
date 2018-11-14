@@ -9,43 +9,40 @@
 
 categories = Category.create([{ title: 'Category 1' }])
 
-tests = Test.create([{ title: 'Test 1', level: 0, category_id: categories.first.id },
-                     { title: 'Test 2', level: 1, category_id: categories.first.id },
-                     { title: 'Test 3', level: 1, category_id: categories.first.id },
-                     { title: 'Test 4', level: 2, category_id: categories.first.id }])
+tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first },
+                     { title: 'Test 2', level: 1, category: categories.first },
+                     { title: 'Test 3', level: 1, category: categories.first },
+                     { title: 'Test 4', level: 2, category: categories.first }])
 
-questions = Question.create([{ body: 'Question 1', test_id: tests.first.id },
-                             { body: 'Question 2', test_id: tests.first.id },
-                             { body: 'Question 3', test_id: tests.first.id  },
-                             { body: 'Question 1', test_id: tests[1].id },
-                             { body: 'Question 2', test_id: tests[1].id },
-                             { body: 'Question 3', test_id: tests[1].id },
-                             { body: 'Question 1', test_id: tests[2].id },
-                             { body: 'Question 2', test_id: tests[2].id },
-                             { body: 'Question 3', test_id: tests[2].id },
-                             { body: 'Question 1', test_id: tests.last.id },
-                             { body: 'Question 2', test_id: tests.last.id },
-                             { body: 'Question 3', test_id: tests.last.id }])
+questions = Question.create([{ body: 'Question 1', test: tests.first },
+                             { body: 'Question 2', test: tests.first },
+                             { body: 'Question 3', test: tests.first },
+                             { body: 'Question 1', test: tests[1] },
+                             { body: 'Question 2', test: tests[1] },
+                             { body: 'Question 3', test: tests[1] },
+                             { body: 'Question 1', test: tests[2] },
+                             { body: 'Question 2', test: tests[2] },
+                             { body: 'Question 3', test: tests[2] },
+                             { body: 'Question 1', test: tests.last },
+                             { body: 'Question 2', test: tests.last },
+                             { body: 'Question 3', test: tests.last }])
 
-answers = Answer.create([{ body: 'Answer 1', correct: false, question_id: questions.first.id },
-                         { body: 'Answer 2', correct: true, question_id: questions.first.id },
-                         { body: 'Answer 3', correct: false, question_id: questions.first.id },
-                         { body: 'Answer 1', correct: true, question_id: questions[1].id }, 
-                         { body: 'Answer 2', correct: false, question_id: questions[1].id },
-                         { body: 'Answer 3', correct: false, question_id: questions[1].id },
-                         { body: 'Answer 1', correct: false, question_id: questions[2].id },
-                         { body: 'Answer 2', correct: false, question_id: questions[2].id },
-                         { body: 'Answer 3', correct: true, question_id: questions[2].id },
-                         { body: 'Answer 1', correct: true, question_id: questions.last.id },
-                         { body: 'Answer 2', correct: false, question_id: questions.last.id },
-                         { body: 'Answer 3', correct: false, question_id: questions.last.id }])
+answers = Answer.create([{ body: 'Answer 1', correct: false, question: questions.first },
+                         { body: 'Answer 2', correct: true, question: questions.first },
+                         { body: 'Answer 3', correct: false, question: questions.first },
+                         { body: 'Answer 1', correct: true, question: questions[1] }, 
+                         { body: 'Answer 2', correct: false, question: questions[1] },
+                         { body: 'Answer 3', correct: false, question: questions[1] },
+                         { body: 'Answer 1', correct: false, question: questions[2] },
+                         { body: 'Answer 2', correct: false, question: questions[2] },
+                         { body: 'Answer 3', correct: true, question: questions[2] },
+                         { body: 'Answer 1', correct: true, question: questions.last },
+                         { body: 'Answer 2', correct: false, question: questions.last },
+                         { body: 'Answer 3', correct: false, question: questions.last }])
 
 users = User.create([{ name: 'Some User', is_admin: false },
                      { name: 'Some Admin', is_admin: true }])
 
-users.first.answers << answers.first
-users.first.answers << answers[4]
-users.first.answers << answers[8]
-users.first.answers << answers[9]
-
+users.first.tests << tests.first
+users.first.tests << tests.last
 

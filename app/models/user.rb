@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_many :answers
+  has_and_belongs_to_many :tests, :join_table => :user_tests
 
   def user_tests(level)
-    Test.distinct.joins(questions: [:answers]).where("tests.level = ?", level)
+    tests.where("tests.level = ?", level)
   end
 end
 
