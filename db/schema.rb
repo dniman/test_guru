@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_164000) do
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
-  create_table "user_tests", force: :cascade do |t|
+  create_table "user_tests", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
     t.index ["test_id"], name: "index_user_tests_on_test_id"
