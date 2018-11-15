@@ -3,6 +3,6 @@ class Test < ApplicationRecord
   has_many :questions
 
   def self.in_descending_order(category_title)
-    joins(:category).where("categories.title = ?", category_title).order("tests.title desc").pluck("tests.title")
+    joins(:category).where(categories: { title: category_title }).order("tests.title desc").pluck("tests.title")
   end
 end
