@@ -7,12 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
+users = User.create([{ name: 'Some User', is_admin: false },
+                     { name: 'Some Admin', is_admin: true }])
+
 categories = Category.create([{ title: 'Category 1' }])
 
-tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first },
-                     { title: 'Test 2', level: 1, category: categories.first },
-                     { title: 'Test 3', level: 1, category: categories.first },
-                     { title: 'Test 4', level: 2, category: categories.first }])
+tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first, author: users.last },
+                     { title: 'Test 2', level: 1, category: categories.first, author: users.last },
+                     { title: 'Test 3', level: 1, category: categories.first, author: users.last },
+                     { title: 'Test 4', level: 2, category: categories.first, author: users.last }])
 
 questions = Question.create([{ body: 'Question 1', test: tests.first },
                              { body: 'Question 2', test: tests.first },
@@ -40,8 +43,6 @@ answers = Answer.create([{ body: 'Answer 1', correct: false, question: questions
                          { body: 'Answer 2', correct: false, question: questions.last },
                          { body: 'Answer 3', correct: false, question: questions.last }])
 
-users = User.create([{ name: 'Some User', is_admin: false },
-                     { name: 'Some Admin', is_admin: true }])
 
 users.first.tests << tests.first
 users.first.tests << tests.last
