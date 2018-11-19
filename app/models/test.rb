@@ -13,4 +13,6 @@ class Test < ApplicationRecord
   scope :in_descending_order, ->(category_title) do
     joins(:category).where(categories: { title: category_title }).order("tests.title desc").pluck("tests.title")
   end
+
+  validations :title, presence: true 
 end
