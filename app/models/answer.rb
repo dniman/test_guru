@@ -3,5 +3,5 @@ class Answer < ApplicationRecord
 
   scope :right_answers, -> { where(correct: true) } 
 
-  validations :body, presence: true
+  validates :body, presence: true
 end

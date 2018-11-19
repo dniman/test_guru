@@ -14,5 +14,5 @@ class Test < ApplicationRecord
     joins(:category).where(categories: { title: category_title }).order("tests.title desc").pluck("tests.title")
   end
 
-  validations :title, presence: true 
+  validates :title, presence: true 
 end
