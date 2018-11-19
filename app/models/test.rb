@@ -10,8 +10,7 @@ class Test < ApplicationRecord
   scope :low_levels, -> { where(level: LOW_DIFFICULTY) }
   scope :middle_levels, -> { where(level: MIDDLE_DIFFICULTY) }
   scope :high_levels, -> { where(level: HIGH_DIFFICULTY) }
-
-  def self.in_descending_order(category_title)
+  scope :in_descending_order, ->(category_title) do
     joins(:category).where(categories: { title: category_title }).order("tests.title desc").pluck("tests.title")
   end
 end
