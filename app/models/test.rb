@@ -10,13 +10,12 @@ class Test < ApplicationRecord
   scope :low_levels, -> { where(level: LOW_DIFFICULTY) }
   scope :middle_levels, -> { where(level: MIDDLE_DIFFICULTY) }
   scope :high_levels, -> { where(level: HIGH_DIFFICULTY) }
-  scope :order_by, ->(attr, direction) { order("tests.#{attr} #{direction}") }
-  scope :select_by, ->(attributes) { pluck(attributes.join(",")) }
+  scope :category_tests, ->(title) { joins(:category).where("categories.title = ?", title) }
                                
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def self.in_descending_order_by(category_title)
-    joins(:category).order_by("title", "desc").select_by(["tests.title"])
+  def self.in_descending_order(title)
+    category_tests(title).order("tests.title desc").pluck("tests.title")
   end
 end
