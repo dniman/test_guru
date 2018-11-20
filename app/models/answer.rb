@@ -2,7 +2,6 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   scope :correct_records, -> { where(correct: true) } 
-  scope :question_answers, ->(question) { where(question: question) }
 
   validates :body, presence: true
   validate :validate_answer_count
@@ -14,6 +13,6 @@ class Answer < ApplicationRecord
   end
 
   def answer_count
-    self.class.question_answers(question).size
+    self.class.where(question: question).size
   end
 end
