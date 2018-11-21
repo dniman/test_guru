@@ -13,6 +13,6 @@ class Answer < ApplicationRecord
   end
 
   def answer_count
-    self.class.where(question: question).size
+    question.answers.size
   end
 end
