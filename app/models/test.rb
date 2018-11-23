@@ -10,7 +10,7 @@ class Test < ApplicationRecord
   scope :low_levels, -> { where(level: LOW_DIFFICULTY) }
   scope :middle_levels, -> { where(level: MIDDLE_DIFFICULTY) }
   scope :high_levels, -> { where(level: HIGH_DIFFICULTY) }
-  scope :category_tests, ->(title) { joins(:category).where("categories.title = ?", title) }
+  scope :category_tests, ->(title) { joins(:category).where(category: { title: title }) }
                                
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
