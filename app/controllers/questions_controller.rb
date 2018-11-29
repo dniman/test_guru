@@ -17,10 +17,9 @@ class QuestionsController < ApplicationController
   end
     
   def create
-    question = Question.create(question_params)
-    question.save
+    question = @test.questions.new(question_params)
 
-    if question.persisted?  
+    if question.save  
       redirect_to question_path(question)
     else
       render plain: "Record not saved" 
@@ -50,7 +49,7 @@ class QuestionsController < ApplicationController
   end
   
   def question_params
-    params.require(:question).permit(:body).merge!(params.permit(:test_id))  
+    params.require(:question).permit(:body)
   end
 end
 
