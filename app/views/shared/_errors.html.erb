@@ -1,0 +1,13 @@
+<!-- app/views/shared/_errors.html.erb -->
+
+<% if resource.errors.present? %>
+  <div>
+    <h2><%= pluralize(resource.errors.count, 'error') %> detected:</h2>
+
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
