@@ -2,3 +2,7 @@
 ru:
   tests:
       title: Наименование теста 
+  activerecord:
+    errors:
+      messages:
+        record_invalid: Запись не сохранена в бд
