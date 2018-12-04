@@ -1,0 +1,14 @@
+<!-- app/views/questions/_form.html.erb -->
+
+<%= form_with model: [@test, @question], local: true do |form| %>
+  <%= render 'shared/errors', resource: @question %>
+
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_field :body, id: :question_body %>
+  </p><br>
+
+  <%= form.submit "Save" %>
+<% end %>

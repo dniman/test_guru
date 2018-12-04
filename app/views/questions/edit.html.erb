@@ -1,0 +1,7 @@
+<!-- app/views/questions/edit.html.erb -->
+
+<h1><%= question_header(@test, @question) %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', test_path(@question.test_id) %>
