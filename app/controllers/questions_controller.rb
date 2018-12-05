@@ -9,10 +9,11 @@ class QuestionsController < ApplicationController
   end
 
   def new 
+    @question = Question.new
+    @question.test_id = params[:test_id]
   end
     
   def edit
-    @test = Test.find(@question.test_id)
   end
 
   def create

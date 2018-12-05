@@ -1,4 +1,4 @@
-<h1><%= question_header(@test, @question) %></h1>
+<h1><%= question_header(@question) %></h1>
 
 <form action="/tests/<%= @test.id %>/questions" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
