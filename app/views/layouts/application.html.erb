@@ -11,14 +11,6 @@
 
   <body>
     <%= yield %>
-    <footer>
-      <p>
-        <%= current_year %>, Дмитрий Петров(Dade Niman)
-      </p>
-      <p>
-      <%= github_url("dniman", "test_guru") %>
-        - учебный проект в онлайн школе <a href="http://thinknetica.com/" target="_blank">Thinknetica</a>
-      </p>
-    </footer>
+    <%= render 'shared/footer' %>
   </body>
 </html>
