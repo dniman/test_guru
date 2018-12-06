@@ -1,5 +1,3 @@
-<!-- app/views/tests/show.html.erb -->
-
 <p>
   <strong>Title:</strong>
   <%= @test.title %>
@@ -9,6 +7,23 @@
   <strong>Level:</strong>
   <%= @test.level %>
 </p>
+          
+<h2>Questions</h2>
+
+<p>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+</p>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th colspan="3">Actions</th>
+  </tr>
+
+  <%= render @test.questions %>
+
+</table>
+
 
 <%= link_to 'Edit', edit_test_path(@test) %>
 <%= link_to 'Back', tests_path %>

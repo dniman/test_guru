@@ -8,7 +8,6 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-
   def new
     @test = Test.new
   end
