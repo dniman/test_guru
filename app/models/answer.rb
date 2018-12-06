@@ -9,6 +9,7 @@ class Answer < ApplicationRecord
   delegate :answers, to: :question, prefix: true
 
   private 
+
   def validate_answer_count
     errors.add(:answers, "too much") if question_answers.size > 4
   end
