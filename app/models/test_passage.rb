@@ -18,6 +18,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def question_num
+    test.questions.find_index(current_question) + 1
+  end
+
   private
 
   def before_validation_set_first_question
@@ -26,7 +30,6 @@ class TestPassage < ApplicationRecord
 
   def before_save_set_next_question
     self.current_question = next_question if persisted?
-    self.question_num += 1
   end
 
   def correct_answer?(answer_ids)
@@ -40,6 +43,4 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
-
 end
-
