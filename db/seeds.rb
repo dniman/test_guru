@@ -20,30 +20,22 @@ tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first, au
 questions = Question.create([{ body: 'Question 1', test: tests.first },
                              { body: 'Question 2', test: tests.first },
                              { body: 'Question 3', test: tests.first },
-                             { body: 'Question 1', test: tests[1] },
-                             { body: 'Question 2', test: tests[1] },
-                             { body: 'Question 3', test: tests[1] },
-                             { body: 'Question 1', test: tests[2] },
-                             { body: 'Question 2', test: tests[2] },
-                             { body: 'Question 3', test: tests[2] },
-                             { body: 'Question 1', test: tests.last },
-                             { body: 'Question 2', test: tests.last },
-                             { body: 'Question 3', test: tests.last }])
+                             { body: 'Question 4', test: tests.first }])
 
 answers = Answer.create([{ body: 'Answer 1', correct: false, question: questions.first },
                          { body: 'Answer 2', correct: true, question: questions.first },
                          { body: 'Answer 3', correct: false, question: questions.first },
+                         
                          { body: 'Answer 1', correct: true, question: questions[1] }, 
                          { body: 'Answer 2', correct: false, question: questions[1] },
                          { body: 'Answer 3', correct: false, question: questions[1] },
+                         
                          { body: 'Answer 1', correct: false, question: questions[2] },
                          { body: 'Answer 2', correct: false, question: questions[2] },
                          { body: 'Answer 3', correct: true, question: questions[2] },
+
                          { body: 'Answer 1', correct: true, question: questions.last },
                          { body: 'Answer 2', correct: false, question: questions.last },
                          { body: 'Answer 3', correct: false, question: questions.last }])
 
-
-users.first.tests << tests.first
-users.first.tests << tests.last
 
