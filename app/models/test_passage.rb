@@ -2,7 +2,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
-     
+          
   before_validation :before_validation_set_first_question, on: :create
   before_save :before_save_set_next_question, on: :save
   
@@ -26,6 +26,7 @@ class TestPassage < ApplicationRecord
 
   def before_save_set_next_question
     self.current_question = next_question if persisted?
+    self.question_num += 1
   end
 
   def correct_answer?(answer_ids)
