@@ -1,5 +1,5 @@
 <p>The <%= @test_passage.test.title %>
-  <% if passed_questions(@test_passage) >= TestPassagesHelper::TEST_PASSED %>
+  <% if test_passed?(@test_passage) %>
     test was completed with <span class="passed"><%= @test_passage.correct_questions %></span> correct questions
   <% else %>
     test was failed with <span class="failed"><%= @test_passage.correct_questions %></span> correct questions
