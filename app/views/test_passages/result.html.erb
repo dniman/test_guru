@@ -1,1 +1,12 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<p>The <%= @test_passage.test.title %>
+  <% if @test_passage.success? %>
+    test was completed with <span class="passed"><%= @test_passage.correct_questions %></span> correct questions
+  <% else %>
+    test was failed with <span class="failed"><%= @test_passage.correct_questions %></span> correct questions
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'Back to test list', root_path %>
+</p>
+
