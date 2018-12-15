@@ -1,5 +1,5 @@
 <p>The <%= @test_passage.test.title %>
-  <% if test_passed?(@test_passage) %>
+  <% if @test_passage.success? %>
     test was completed with <span class="passed"><%= @test_passage.correct_questions %></span> correct questions
   <% else %>
     test was failed with <span class="failed"><%= @test_passage.correct_questions %></span> correct questions
