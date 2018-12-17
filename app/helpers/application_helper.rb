@@ -1,4 +1,6 @@
 module ApplicationHelper
+  
+  EXCEPT_AUTH_PAGES = %i[ login_path signup_path ]
 
   def current_year
     Time.current.year
@@ -10,6 +12,10 @@ module ApplicationHelper
 
   def flash_message(type)
     content_tag(:p, flash[type], class: "flash #{type}") if flash.now[type] 
+  end
+     
+  def auth_pages
+    EXCEPT_AUTH_PAGES.each(&:current_page?)
   end
 
 end
