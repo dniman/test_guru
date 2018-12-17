@@ -1,4 +1,6 @@
 class TestsController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :set_test, only: %i[show edit update destroy start] 
   before_action :set_user, only: :start   
 
@@ -54,9 +56,9 @@ class TestsController < ApplicationController
     params.require(:test).permit(:category_id, :title, :level)
   end
 
-  def current_user
-    @user = User.find_by(name: "Some Admin")
-  end
+  #def current_user
+  #  @user = User.find_by(name: "Some Admin")
+  #end
 
   def set_user
     @user = User.first
