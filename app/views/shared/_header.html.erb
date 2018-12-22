@@ -1,0 +1,15 @@
+<header>
+  <h1><%= link_to 'Tricky Tests', root_path %></h1>
+  <% unless current_page?(login_path) || current_page?(signup_path) %>
+    <% if logged_in? %>
+      <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru
+        <%= link_to 'Sign out', sign_out_path %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to 'Sign in', login_path %>
+        <%= link_to 'Sign up', signup_path %>
+      </p>
+    <% end %>
+  <% end %>
+</header>

@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
-users = User.create([{ name: 'Some User', is_admin: false, email: 'some.user@example.com' },
-                     { name: 'Some Admin', is_admin: true, email: 'some.admin@example.com' }])
+users = User.create([{ name: 'Some User', is_admin: false, email: 'some.user@example.com', password_digest: BCrypt::Password.create('user') },
+                     { name: 'Some Admin', is_admin: true, email: 'some.admin@example.com', password_digest: BCrypt::Password.create('admin') }])
 
 categories = Category.create([{ title: 'Category 1' }])
 

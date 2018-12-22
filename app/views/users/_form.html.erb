@@ -1,6 +1,8 @@
 <%= form_with model: @user, local: true do |form| %>
   <%= render 'shared/errors', resource: @user %>
 
+  <%= flash_message(:alert) %> 
+
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name, id: :user_name %>
