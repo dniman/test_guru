@@ -1,13 +1,10 @@
-<p>
-  <%= link_to 'New test', new_test_path %>
-</p>
 <table>
   <tr>
     <th>Title</th>
     <th>Level</th>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <th>Question count</th>
-      <th colspan="4">Actions</th>
+      <th>Actions</th>
     <% end %>
   </tr>
 

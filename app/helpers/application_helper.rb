@@ -1,7 +1,5 @@
 module ApplicationHelper
   
-  EXCEPT_AUTH_PAGES = %i[ login_path signup_path ]
-
   def current_year
     Time.current.year
   end
@@ -14,8 +12,14 @@ module ApplicationHelper
     content_tag(:p, flash[type], class: "flash #{type}") if flash.now[type] 
   end
      
-  def auth_pages
-    EXCEPT_AUTH_PAGES.each(&:current_page?)
+  def auth_pages?
+    except_auth_pages.detect { |page| current_page?(page) }
+  end
+     
+  private
+
+  def except_auth_pages
+    [ new_user_session_path, new_user_registration_path ]
   end
 
 end
