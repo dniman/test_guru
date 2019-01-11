@@ -1,7 +1,5 @@
 class User < ApplicationRecord
   
-  before_validation :set_default_password
-
   devise :database_authenticatable, 
          :registerable,
          :recoverable, 
@@ -24,12 +22,5 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
      
-  private
-
-  def set_default_password
-    self.password = 'password123'
-    self.password_confirmation = 'password123'
-  end
-
 end
 
