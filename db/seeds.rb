@@ -7,15 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
-users = User.create([{ name: 'Some User', is_admin: false, email: 'some.user@example.com' },
-                     { name: 'Some Admin', is_admin: true, email: 'some.admin@example.com' }])
+admin = User.new( first_name: 'Some', last_name: 'Admin', is_admin: true, email: 'some.admin@example.com', password: 'admin123', password_confirmation: 'admin123')
+admin.skip_confirmation!
+admin.save!
 
 categories = Category.create([{ title: 'Category 1' }])
 
-tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first, author: users.last },
-                     { title: 'Test 2', level: 1, category: categories.first, author: users.last },
-                     { title: 'Test 3', level: 1, category: categories.first, author: users.last },
-                     { title: 'Test 4', level: 2, category: categories.first, author: users.last }])
+tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first, author: admin },
+                     { title: 'Test 2', level: 1, category: categories.first, author: admin },
+                     { title: 'Test 3', level: 1, category: categories.first, author: admin },
+                     { title: 'Test 4', level: 2, category: categories.first, author: admin }])
 
 questions = Question.create([{ body: 'Question 1', test: tests.first },
                              { body: 'Question 2', test: tests.first },
