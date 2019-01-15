@@ -28,5 +28,8 @@ class User < ApplicationRecord
    "#{first_name} #{last_name}"
   end
 
+  def admin?
+    self.class.is_a?(Admin)
+  end
 end
 
