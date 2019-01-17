@@ -1,7 +1,5 @@
 class User < ApplicationRecord
   
-  before_validation :set_default_password
-
   devise :database_authenticatable, 
          :registerable,
          :recoverable, 
@@ -15,6 +13,8 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'   
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   def tests_by(level)
     tests.where(level: level)
@@ -23,13 +23,13 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
-     
-  private
-
-  def set_default_password
-    self.password = 'password123'
-    self.password_confirmation = 'password123'
+          
+  def full_name
+   "#{first_name} #{last_name}"
   end
 
+  def admin?
+    self.class.is_a?(Admin)
+  end
 end
 

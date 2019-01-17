@@ -1,5 +1,2 @@
-class Admin < ApplicationRecord
-
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+class Admin < User 
 end

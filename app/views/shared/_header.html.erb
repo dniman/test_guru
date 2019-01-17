@@ -2,7 +2,7 @@
   <h1><%= link_to 'Tricky Tests', root_path %></h1>
   <% unless auth_pages? %>  
     <% if user_signed_in? %>  
-      <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru | 
+      <p class="nav user">Welcome, <b><%= current_user.full_name %></b> Guru | 
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
       </p>
     <% else %>

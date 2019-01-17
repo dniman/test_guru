@@ -11,7 +11,7 @@
 <h2>Questions</h2>
 
 <p>
-  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <%= link_to 'New question', new_test_admin_question_path(@test) %>
 </p>
 
 <table>
@@ -21,7 +21,7 @@
   </tr>
 
   <ol>
-    <%= render partial: 'questions/question', collection: @test.questions %>
+    <%= render partial: 'admin/questions/question', collection: @test.questions %>
   </ol>
 </table>
 
