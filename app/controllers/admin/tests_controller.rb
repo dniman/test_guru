@@ -20,7 +20,7 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new(test_params)
 
     if @test.save
-      redirect_to @test
+      redirect_to @test, notice: t(".success")
     else
       render :new
     end

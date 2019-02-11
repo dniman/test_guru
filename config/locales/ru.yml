@@ -1,7 +1,8 @@
 
 ru:
-  tests:
-      title: Наименование теста 
+  shared:
+    header: "Доступные Тесты"
+
   activerecord:
     errors:
       messages:
