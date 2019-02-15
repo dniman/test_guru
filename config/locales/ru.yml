@@ -1,9 +1,108 @@
-
 ru:
+  test_passages:
+    show:
+      primary_title: "Пройдите тест %{test_title}"
+      total_questions: "Общее количество вопросов - %{test_questions_count}" 
+      submit: "Далее"
+    result:
+      primary_title: "%{test_title}"
+      back: "Назад к списку тестов"
+      test_completed: "Тест пройден с <span class=\"passed\">%{correct_questions}</span> правильными ответами"
+      test_failed: "Тест не пройден c <span class=\"failed\">%{correct_questions}</span> правильными ответами"
+  tests:
+    index:
+      title: "Название"
+      level: "Уровень сложности"
+      actions: "Операции"
+  admin:
+    nav:
+      admin_panel: "Панель Администрирования"
+      welcome_message: "Добро пожаловать" 
+      user_email_addition: "Гуру"
+      logout: "Выйти"
+
+    answers:
+      answer:
+        show: "Открыть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        primary_title: "Редактирование Ответа"
+        back: "Назад"
+      new:
+        primary_title: "Cоздание Ответа"
+        back: "Назад"
+      show:
+        primary_title: "Вопрос"
+        answer: "Ответ: "
+        correct: "Признак правильности ответа: "
+        back: "Назад"
+    questions:
+      question:
+        show: "Открыть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        edit: "Редактирование %{title} Теста"
+        primary_title: "%{title}"
+        back: "Назад"
+      new:
+        create_new: "Создание Нового %{title} Теста"
+        primary_title: "%{title}"
+        back: "Назад"
+      show:
+        primary_title: "%{title} Вопрос"
+        secondary_title: "Ответы"
+        new_answer: "Создать Ответ"
+        edit: "Редактировать"
+        back: "Назад"
+    tests:
+      test:
+        show: "Открыть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        edit: "Редактирование"
+        back: "Назад"
+      index:
+        new_test: "Создать Тест"
+        title: "Наименование"
+        level: "Уроверь сложности"
+        question_count: "Количество вопросов"
+        actions: "Операции"
+      new:
+        create_new_test: "Создать Новый тест"
+        back: "Назад"
+      show:
+        title: "Наименование: "
+        level: "Уровень сложности: " 
+        questions: "Вопросы"
+        new_question: "Создать вопрос"
+        body: "Наименование вопроса"
+        action: "Операции"
+        edit: "Редактировать"
+        back: "Назад"
+
+  layouts:
+    admin:
+      head:
+        title: "Панель Администрирования | TestGuru"
+
   shared:
     header: "Доступные Тесты"
+    welcome_message: "Добро пожаловать"
+    user_name_addition: "Гуру"
+    logout: "Выйти"
+    sign_in: "Войти"
+    sign_up: "Регистрация"
+    footer:
+      description: "учебный проект в онлайн-школе"
 
-  activerecord:
-    errors:
-      messages:
-        record_invalid: Запись не сохранена в бд
+  helpers:
+    submit:
+      submit: "Сохранить"
+    buttons:
+      start: "Начать"

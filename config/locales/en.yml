@@ -1,4 +1,109 @@
 en:
+  test_passages:
+    show:
+      primary_title: "Pass the %{test_title} Test"
+      total_questions: "Total questions - %{test_questions_count}" 
+      submit: "Next"
+    result:
+      primary_title: "The %{test_title}"
+      back: "Back to test list"
+      test_completed: "test was completed with <span class=\"passed\">%{correct_questions}</span> correct questions"
+      test_failed: "test was failed with <span class=\"failed\">%{correct_questions}</span> correct questions"
+  tests:
+    index:
+      title: "Title"
+      level: "Level"
+      actions: "Actions"
+  admin:
+    nav:
+      admin_panel: "Admin Panel"
+      welcome_message: "Welcome" 
+      user_email_addition: "Guru"
+      logout: "Logout"
+          
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      edit:
+        primary_title: "Editing Answer"
+        back: "Back"
+      new:
+        primary_title: "New Answer"
+        back: "Back"
+      show:
+        primary_title: "Question"
+        answer: "Answer: "
+        correct: "Correct: "
+        back: "Back"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      edit:
+        edit: "Edit %{title} Test"
+        primary_title: "%{title}"
+        back: "Back"
+      new:
+        create_new: "Create New %{title} Test"
+        primary_title: "%{title}"
+        back: "Back"
+      show:
+        primary_title: "%{title} Question"
+        secondary_title: "Answers"
+        new_answer: "New Answer"
+        edit: "Edit"
+        back: "Back"
+    tests:
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      edit:
+        edit: "Edit"
+        back: "Back"
+      index:
+        new_test: "New Test"
+        title: "Title"
+        level: "Level"
+        question_count: "Question count"
+        actions: "Actions"
+      new:
+        create_new_test: "Create New Test"
+        back: "Back"
+      show:
+        title: "Title"
+        level: "Level" 
+        questions: "Questions"
+        new_question: "New Question"
+        body: "Body"
+        action: "Actions"
+        edit: "Edit"
+        back: "Back"
+
+  layouts:
+    admin:
+      head:
+        title: "Admin Panel | TestGuru"
 
   shared:
     header: "Tricky Tests"
+    welcome_message: "Welcome"
+    user_name_addition: "Guru"
+    logout: "Logout"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    footer:
+      description: "study project in online school"
+
+
+  helpers:
+    submit:
+      submit: "Save"
+    buttons:
+      start: "Start"
