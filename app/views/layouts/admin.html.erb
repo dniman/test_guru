@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title><%= t(".head.title") %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title><%= t(".head.title") %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,11 +13,13 @@
   </head>
 
   <body>
-    <%= render 'admin/nav' %>
-    <%= render 'shared/flash' %>
+    <div class="container">
+      <%= render 'admin/nav' %>
+      <%= render 'shared/flash' %>
     
-    <%= yield %>
+      <%= yield %>
 
-    <%= render 'shared/footer' %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
