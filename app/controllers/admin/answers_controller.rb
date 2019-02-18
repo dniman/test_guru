@@ -16,9 +16,10 @@ class Admin::AnswersController < Admin::BaseController
 
   def create
     @answer = Answer.new(answer_params)
+    @answer.question = @question
     
     if @answer.save
-      redirect_to @answer
+      redirect_to [:admin, @answer]
     else
       render :new
     end

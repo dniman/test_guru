@@ -20,4 +20,5 @@ class Test < ApplicationRecord
   def self.in_descending_order(title)
     category_tests(title).order("tests.title desc").pluck("tests.title")
   end
+
 end

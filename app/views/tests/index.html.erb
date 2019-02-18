@@ -1,10 +1,9 @@
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
+    <th><%= t(".title") %></th>
+    <th><%= t(".level") %></th>
     <% if user_signed_in? %>
-      <th>Question count</th>
-      <th>Actions</th>
+      <th><%= t(".actions") %></th>
     <% end %>
   </tr>
 

@@ -1,4 +1,5 @@
-<%= form_with model: [:admin, @test, @question], local: true do |form| %>
+<%= form_with model: [@test,:admin, @question], local: true do |form| %>
+
   <%= render 'shared/errors', resource: @question %>
 
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -8,5 +9,5 @@
     <%= form.text_field :body, id: :question_body %>
   </p><br>
 
-  <%= form.submit "Save" %>
+  <%= form.submit t("helpers.submit.submit") %>
 <% end %>

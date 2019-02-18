@@ -1,0 +1,30 @@
+ru:
+  activerecord:
+    models:
+      category: "Категория"
+      test: "Tecт"
+      question: "Вопрос"
+      answer: "Ответ"
+      test_passage: "Прохождение теста"
+
+    attributes:
+      category:
+        title: "Наименование"
+
+      test:
+        title: "Наименование"
+        level: "Уровень сложности"
+        category: "Категория"
+
+      question:
+        body: "Тело вопроса"
+        
+      answer:
+        body: "Тело ответа"
+        correct: "Признак правильности"
+      
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        taken: "yже существует"
+        required: "является обязательным параметром"

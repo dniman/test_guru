@@ -1,7 +1,7 @@
-<h1>Pass the <%= @test_passage.test.title %> Test</h1>
+<h1><%= t(".primary_title", test_title: @test_passage.test.title) %></h1>
 
 <p>
-  Total questions - <%= @test_passage.test.questions.count %>
+  <%= t(".total_questions", test_questions_count: @test_passage.test.questions.count) %>
 <p>
 
 <b>
@@ -16,5 +16,5 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit t(".submit") %></p>
 <% end %>
