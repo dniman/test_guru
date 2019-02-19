@@ -13,13 +13,12 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render 'admin/nav' %>
-      <%= render 'shared/flash' %>
+    <%= render 'admin/nav' %>
+    <%= render 'shared/flash' %>
     
+    <div class="container">
       <%= yield %>
-
-      <%= render 'shared/footer' %>
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
