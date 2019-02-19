@@ -1,12 +1,20 @@
-<table>
-  <tr>
-    <th><%= t(".title") %></th>
-    <th><%= t(".level") %></th>
-    <% if user_signed_in? %>
-      <th><%= t(".actions") %></th>
-    <% end %>
-  </tr>
+<div class="row justify-content-center">
+  <div class="col mx-auto">
+    <div class="text-center">
+      <%= content_tag :h2, t(".primary_title"), class: "mt-2" %>
+    
+      <table style="margin: 0 auto">
+        <tr>
+          <th><%= t(".title") %></th>
+          <th><%= t(".level") %></th>
+          <% if user_signed_in? %>
+            <th><%= t(".actions") %></th>
+          <% end %>
+        </tr>
 
-  <%= render @tests %>
+      <%= render @tests %>
 
-</table>
+      </table>
+    </div>
+  </div>
+</div>
