@@ -15,7 +15,16 @@ module ApplicationHelper
   def auth_pages?
     except_auth_pages.detect { |page| current_page?(page) }
   end
-     
+
+  def flash_class(level)
+    case level.to_sym
+        when :notice then "alert alert-info"
+        when :success then "alert alert-success"
+        when :error then "alert alert-error"
+        when :alert then "alert alert-error"
+    end
+  end
+
   private
 
   def except_auth_pages

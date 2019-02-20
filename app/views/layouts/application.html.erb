@@ -13,13 +13,13 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
+    
     <div class="container">
       <%= render 'shared/flash' %>
-      <%= render 'shared/header' %>
-    
       <%= yield %>
-
-      <%= render 'shared/footer' %>
     </div>
+    
+    <%= render 'shared/footer' %>
   </body>
 </html>

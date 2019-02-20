@@ -11,11 +11,12 @@ ru:
       test_failed: "Тест не пройден c <span class=\"failed\">%{correct_questions}</span> правильными ответами"
   tests:
     index:
+      primary_title: "Доступные Тесты"
       title: "Название"
       level: "Уровень сложности"
       actions: "Операции"
   admin:
-    nav:
+    header:
       admin_panel: "Панель Администрирования"
       welcome_message: "Добро пожаловать" 
       user_email_addition: "Гуру"
@@ -68,6 +69,7 @@ ru:
         edit: "Редактирование"
         back: "Назад"
       index:
+        primary_title: "Доступные Тесты"
         new_test: "Создать Тест"
         title: "Наименование"
         level: "Уроверь сложности"
@@ -92,7 +94,8 @@ ru:
         title: "Панель Администрирования | TestGuru"
 
   shared:
-    header: "Доступные Тесты"
+    header:
+      admin_panel: "В панель администрирования"
     welcome_message: "Добро пожаловать"
     user_name_addition: "Гуру"
     logout: "Выйти"

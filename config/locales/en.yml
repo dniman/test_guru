@@ -11,11 +11,12 @@ en:
       test_failed: "test was failed with <span class=\"failed\">%{correct_questions}</span> correct questions"
   tests:
     index:
+      primary_title: "Tricky Tests"
       title: "Title"
       level: "Level"
       actions: "Actions"
   admin:
-    nav:
+    header:
       admin_panel: "Admin Panel"
       welcome_message: "Welcome" 
       user_email_addition: "Guru"
@@ -68,6 +69,7 @@ en:
         edit: "Edit"
         back: "Back"
       index:
+        primary_title: "Tricky Tests"
         new_test: "New Test"
         title: "Title"
         level: "Level"
@@ -92,7 +94,8 @@ en:
         title: "Admin Panel | TestGuru"
 
   shared:
-    header: "Tricky Tests"
+    header:
+      admin_panel: "To Admin Panel"
     welcome_message: "Welcome"
     user_name_addition: "Guru"
     logout: "Logout"

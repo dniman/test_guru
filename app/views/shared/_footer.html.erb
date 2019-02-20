@@ -1,9 +1,14 @@
 <footer>
-  <p>
-    <%= current_year %>, Дмитрий Петров(Dade Niman)
-  </p>
-  <p>
-    <%= github_url("dniman", "test_guru") %>
-    - <%= t(".description") %> <a href="http://thinknetica.com/" target="_blank">Thinknetica</a>
-  </p>
+  <nav class="navbar navbar-light bg-light flex-column mt-2">
+    
+    <span class="navbar-text">
+      <%= current_year %>, Дмитрий Петров(Dade Niman)
+    </span>
+    
+    <span class="navbar-text">
+      <%= github_url("dniman", "test_guru") %>
+      - <%= t(".description") %> <a href="http://thinknetica.com/" target="_blank">Thinknetica</a>
+    </span>
+ 
+  </nav>
 </footer>

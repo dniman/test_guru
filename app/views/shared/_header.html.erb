@@ -1,15 +1,24 @@
 <header>
-  <h1><%= link_to t('shared.header'), root_path %></h1>
-  <% unless auth_pages? %>  
-    <% if user_signed_in? %>  
-      <p class="nav user"><%= t("shared.welcome_message") %>, <b><%= current_user.full_name %></b> <%= t("shared.user_name_addition") %> | 
-        <%= link_to t("shared.logout"), destroy_user_session_path, method: :delete %>
-      </p>
-    <% else %>
-      <p>
-        <%= link_to t("shared.sign_in"), new_user_session_path %>
-        <%= link_to t("shared.sign_up"), new_user_registration_path %>
-      </p>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+
+    <% if current_user&.admin? %>
+      <%= link_to t(".admin_panel"), admin_tests_path, class: 'navitem navlink' %>
     <% end %>
-  <% end %>
+    
+    <span class="navbar-text">
+      <% unless auth_pages? %>  
+        <% if user_signed_in? %>  
+          <p class="nav user"><%= t("shared.welcome_message") %>, <b><%= current_user.full_name %></b> <%= t("shared.user_name_addition") %> |  
+            <%= link_to t("shared.logout"), destroy_user_session_path, method: :delete %>
+          </p>
+        <% else %>
+          <p>
+            <%= link_to t("shared.sign_in"), new_user_session_path %>
+            <%= link_to t("shared.sign_up"), new_user_registration_path %>
+          </p>
+        <% end %>
+      <% end %>
+    </span>
+  </nav>
 </header>
