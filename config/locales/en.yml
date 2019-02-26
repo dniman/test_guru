@@ -9,6 +9,9 @@ en:
       back: "Back to test list"
       test_completed: "test was completed with <span class=\"passed\">%{correct_questions}</span> correct questions"
       test_failed: "test was failed with <span class=\"failed\">%{correct_questions}</span> correct questions"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
   tests:
     index:
       primary_title: "Tricky Tests"

@@ -9,6 +9,9 @@ ru:
       back: "Назад к списку тестов"
       test_completed: "Тест пройден с <span class=\"passed\">%{correct_questions}</span> правильными ответами"
       test_failed: "Тест не пройден c <span class=\"failed\">%{correct_questions}</span> правильными ответами"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
   tests:
     index:
       primary_title: "Доступные Тесты"
