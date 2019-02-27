@@ -1,7 +1,6 @@
 class TestPassagesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_user_gist, only: %i[gist]
   before_action :set_test_passage, only: %i[show update result gist] 
   
   def show
@@ -28,8 +27,8 @@ class TestPassagesController < ApplicationController
     if result.success?
       flash_options[:notice] = t('.success', url: result.url) 
       
-      @user_gist.question = @test_passage.current_question
-      @user_gist.gist_url = result.url
+      @user_gist = current_user.gists.new
+      @user_gist.question, @user_gist.gist_url = @test_passage.current_question, result.url
       @user_gist.save!
     else
       flash_options[:alert] = t('.failure') 
@@ -45,6 +44,5 @@ class TestPassagesController < ApplicationController
   end
 
   def set_user_gist
-    @user_gist = current_user.gists.new
   end
 end
