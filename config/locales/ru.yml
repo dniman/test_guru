@@ -1,4 +1,6 @@
 ru:
+  services:
+    description: "Вопрос о %{title} из TestGuru"
   test_passages:
     show:
       primary_title: "Пройдите тест %{test_title}"

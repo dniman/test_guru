@@ -1,4 +1,6 @@
 en:
+  services:
+    description: "A question about %{title} from TestGuru"
   test_passages:
     show:
       primary_title: "Pass the %{test_title} Test"
