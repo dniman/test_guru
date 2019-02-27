@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to user_gist.question.body.first(25), admin_question_path(user_gist.question) %></td>
+  <td><%= link_to gist_hash(user_gist.gist_url), user_gist.gist_url, target: "_blank" %></td>
+  <td><%= user_gist.user.email%></td>
+</tr>

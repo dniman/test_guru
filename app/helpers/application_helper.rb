@@ -24,6 +24,10 @@ module ApplicationHelper
         when :alert then "alert alert-error"
     end
   end
+  
+  def gist_hash(gist_url)
+    gist_url.reverse[0..gist_url.reverse.index("\/")-1].reverse
+  end
 
   private
 

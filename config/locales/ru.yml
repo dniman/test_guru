@@ -80,6 +80,10 @@ ru:
         level: "Уроверь сложности"
         question_count: "Количество вопросов"
         actions: "Операции"
+        secondary_title: "Пользовательские Gists"
+        gist_question: "Вопрос"
+        gist_url: "Gist URL"
+        gist_user: "Пользователь"
       new:
         create_new_test: "Создать Новый тест"
         back: "Назад"
