@@ -10,7 +10,7 @@ en:
       test_completed: "test was completed with <span class=\"passed\">%{correct_questions}</span> correct questions"
       test_failed: "test was failed with <span class=\"failed\">%{correct_questions}</span> correct questions"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! %{url}"
       failure: "An error occurred while saving gist"
   tests:
     index:

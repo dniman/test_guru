@@ -9,6 +9,8 @@ class OctokitClient
     
     Response.new(client.last_response)
   end
+    
+  private
 
   def client
     @client ||= Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
@@ -22,6 +24,10 @@ class OctokitClient
 
     def success?
       !!@response
+    end
+
+    def url
+      @response.data[:url]
     end
   end
 end
