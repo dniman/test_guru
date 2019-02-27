@@ -2,6 +2,7 @@ class TestPassagesController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_client, only: %i[gist]
+  before_action :set_user_gist, only: %i[gist]
   before_action :set_test_passage, only: %i[show update result gist] 
   
   def show
@@ -31,6 +32,10 @@ class TestPassagesController < ApplicationController
                       { alert: t('.failure') }
                     end
     
+    @user_gist.question = @test_passage.current_question
+    @user_gist.gist_url = result.url
+    @user_gist.save!
+
     redirect_to @test_passage, flash_options
   end
 
@@ -42,5 +47,9 @@ class TestPassagesController < ApplicationController
 
   def set_client
     @client = OctokitClient.new
+  end
+
+  def set_user_gist
+    @user_gist = current_user.gists.new
   end
 end
