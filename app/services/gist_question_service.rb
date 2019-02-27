@@ -10,10 +10,6 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def last_gist
-    @client.last_gist
-  end
-
   private
 
   def gist_params
