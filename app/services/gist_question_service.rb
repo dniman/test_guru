@@ -6,13 +6,19 @@ class GistQuestionService
   end
 
   def call
-    client.create_gist(gist_params)
+    begin
+      client.create_gist(gist_params)
+    rescue Exception => e
+      Rails.logger << "#{e.message}"
+    end
+    
+    Response.new(client.last_response)
   end
 
   private
 
   def client
-    @client ||= OctokitClient.new
+    @client ||= Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
   def gist_params
@@ -30,5 +36,20 @@ class GistQuestionService
     content = [ @question.body ]
     content += @question.answers.pluck(:body)
     content.join("\n")
+  end
+  
+  class Response
+    
+    def initialize(response)
+      @response = response
+    end
+
+    def success?
+      !!@response
+    end
+
+    def url
+      @response.data[:url]
+    end
   end
 end
