@@ -21,3 +21,19 @@
     </table>
   </div>
 </div>
+<div class="row justify-content-center">
+  <div class="col mx-auto">
+    <%= content_tag :h2, t(".secondary_title"), class: "mt-2 text-center" %>
+    
+    <table style="margin: 0 auto">
+      <tr>
+        <th><%= t(".gist_question") %></th>
+        <th><%= t(".gist_url") %></th>
+        <th><%= t(".gist_user") %></th>
+      </tr>
+
+    <%= render @user_gists %>
+
+    </table>
+  </div>
+</div>

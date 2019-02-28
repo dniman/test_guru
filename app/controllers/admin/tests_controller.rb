@@ -4,6 +4,7 @@ class Admin::TestsController < Admin::BaseController
 
   def index
     @tests = Test.all
+    @user_gists = UserGist.all
   end
 
   def show
