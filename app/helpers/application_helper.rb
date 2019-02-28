@@ -26,7 +26,8 @@ module ApplicationHelper
   end
   
   def gist_hash(gist_url)
-    gist_url.reverse[0..gist_url.reverse.index("\/")-1].reverse
+    #gist_url.reverse[0..gist_url.reverse.index("\/")-1].reverse
+    gist_url.split("\/").last
   end
 
   private
