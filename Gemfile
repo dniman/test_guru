@@ -41,6 +41,7 @@ gem 'devise', '~> 4.0'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'octicons_helper'
 
 gem 'faraday'
 gem 'octokit', '~> 4.0'
