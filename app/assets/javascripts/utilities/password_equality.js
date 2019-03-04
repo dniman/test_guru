@@ -12,6 +12,12 @@ function checkEquality(){
   var password = form.querySelector('#user_password');
   var passwordConfirmation = form.querySelector('#user_password_confirmation');
        
+  if (passwordConfirmation.value == ''){
+    passwordConfirmation.classList.remove('is-invalid');
+    passwordConfirmation.classList.remove('is-valid');
+    return;
+  };
+
   if (password.value != passwordConfirmation.value){
     passwordConfirmation.classList.add('is-invalid');
     passwordConfirmation.classList.remove('is-valid');
