@@ -3,9 +3,13 @@
     <div class="text-center">
       <%= content_tag :h2, t(".primary_title"), class: "mt-2" %>
     
-      <table style="margin: 0 auto">
+      <table class="table" style="margin: 0 auto">
         <tr>
-          <th><%= t(".title") %></th>
+          <th class="sort-by-title pointer">
+            <%= t(".title") %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
           <th><%= t(".level") %></th>
           <% if user_signed_in? %>
             <th><%= t(".actions") %></th>
