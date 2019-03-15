@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tests
+    resources :tests do
+      patch :update_inline, on: :member
+    end
   end
   
   visualize

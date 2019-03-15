@@ -96,6 +96,8 @@ en:
         action: "Actions"
         edit: "Edit"
         back: "Back"
+      form_inline:
+        submit: "OK"
 
   layouts:
     admin:

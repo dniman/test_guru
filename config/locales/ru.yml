@@ -96,6 +96,8 @@ ru:
         action: "Операции"
         edit: "Редактировать"
         back: "Назад"
+      form_inline:
+        submit: "OK"
 
   layouts:
     admin:

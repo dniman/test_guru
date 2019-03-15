@@ -1,5 +1,19 @@
 <h1><%= t(".primary_title", test_title: @test_passage.test.title) %></h1>
 
+<%= content_tag :div, class: 'progress' do %>
+  <%= content_tag :div,
+                  '',
+                  class: 'progress-bar', 
+                  role: 'progressbar', 
+                  'area-valuemin': '0',
+                  'aria-valuemax': '100', 
+                  'aria-valuenow': '0',
+                  data: { 
+                    question_num: @test_passage.question_num,
+                    questions_count: @test_passage.test.questions.size
+                  } %>
+<% end %>
+
 <p>
   <b><%= t(".total_questions", test_questions_count: @test_passage.test.questions.count) %></b>
 <p>
