@@ -6,11 +6,13 @@ en:
       primary_title: "Pass the %{test_title} Test"
       total_questions: "Total questions - %{test_questions_count}" 
       submit: "Next"
+      tests_completed: "Tests completed: 0"
     result:
       primary_title: "The %{test_title}"
       back: "Back to test list"
       test_completed: "test was completed with <span class=\"passed\">%{correct_questions}</span> correct questions"
       test_failed: "test was failed with <span class=\"failed\">%{correct_questions}</span> correct questions"
+      tests_completed: "Tests completed: 0"
     gist:
       success: "Gist was successfully created! %{url}"
       failure: "An error occurred while saving gist"
@@ -96,6 +98,8 @@ en:
         action: "Actions"
         edit: "Edit"
         back: "Back"
+      form_inline:
+        submit: "OK"
 
   layouts:
     admin:

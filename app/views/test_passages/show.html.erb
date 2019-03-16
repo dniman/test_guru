@@ -1,5 +1,19 @@
 <h1><%= t(".primary_title", test_title: @test_passage.test.title) %></h1>
 
+<%= content_tag :div, class: 'progress' do %>
+  <%= content_tag :div,
+                  t('.tests_completed'),
+                  class: 'progress-bar', 
+                  role: 'progressbar', 
+                  'area-valuemin': '0',
+                  'aria-valuemax': '100', 
+                  'aria-valuenow': '0',
+                  data: { 
+                    question_num: @test_passage.question_num,
+                    questions_count: @test_passage.test.questions.size
+                  } %>
+<% end %>
+
 <p>
   <b><%= t(".total_questions", test_questions_count: @test_passage.test.questions.count) %></b>
 <p>
@@ -9,9 +23,10 @@
 </b>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  <%= hidden_field_tag "answer_ids[]", nil %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
-      <%= b.check_box id: "answer_ids_#(b.object.id)" %>
+    <%= b.check_box id: "answer_ids_#{b.object.id}" %>
       <%= b.label %>
     </p>
   <% end %>
