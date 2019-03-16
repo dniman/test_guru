@@ -2,9 +2,19 @@ document.addEventListener('turbolinks:load', function() {
   var control = document.querySelector('.progress-bar');
 
   if (control) {
-    var value = control.dataset.questionNum / control.dataset.questionsCount * 100;
-    control.nodeValue = value;
-    control.setAttribute('aria-valuenow', value);
-    control.style.width = value + "%";
+    var questionNum = control.dataset.questionNum;
+    
+    if (questionNum > 1) {
+      var value = (questionNum - 1) / control.dataset.questionsCount * 100;
+     
+      var testsCompletedInfo = control.textContent.split(" ");
+      testsCompletedInfo[testsCompletedInfo.length -1] = questionNum - 1;
+      control.textContent = testsCompletedInfo.join(" ");
+      control.setAttribute('aria-valuenow', value);
+      control.style.width = value + "%";
+    }
+    else {
+      control.textContent = ""; 
+    };
   };
 })

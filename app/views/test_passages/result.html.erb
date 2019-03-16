@@ -1,4 +1,17 @@
 <p><%= t(".primary_title", test_title: @test_passage.test.title) %>
+  <%= content_tag :div, class: 'progress' do %>
+    <%= content_tag :div,
+                    t('.tests_completed'),
+                    class: 'progress-bar', 
+                    role: 'progressbar', 
+                    'area-valuemin': '0',
+                    'aria-valuemax': '100', 
+                    'aria-valuenow': '100',
+                    data: { 
+                      question_num: @test_passage.test.questions.size + 1,
+                      questions_count: @test_passage.test.questions.size
+                    } %>
+  <% end %>
   <% if @test_passage.success? %>
     test was completed with <span class="passed"><%= @test_passage.correct_questions %></span> correct questions
   <% else %>

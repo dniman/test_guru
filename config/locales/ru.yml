@@ -6,11 +6,13 @@ ru:
       primary_title: "Пройдите тест %{test_title}"
       total_questions: "Общее количество вопросов - %{test_questions_count}" 
       submit: "Далее"
+      tests_completed: "Пройдено тестов: 0"
     result:
       primary_title: "%{test_title}"
       back: "Назад к списку тестов"
       test_completed: "Тест пройден с <span class=\"passed\">%{correct_questions}</span> правильными ответами"
       test_failed: "Тест не пройден c <span class=\"failed\">%{correct_questions}</span> правильными ответами"
+      tests_completed: "Пройдено тестов: 0"
     gist:
       success: "Gist успешно сохранен! %{url}"
       failure: "Во время сохранения gist произошла ошибка"
