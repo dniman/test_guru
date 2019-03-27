@@ -29,6 +29,6 @@ Rails.application.routes.draw do
     end
   end
   
-  visualize
+  visualize if Rails.env.development?
 end
 
