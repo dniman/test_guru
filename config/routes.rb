@@ -28,6 +28,12 @@ Rails.application.routes.draw do
       patch :update_inline, on: :member
     end
   end
+      
+  #resources :contact_form, only: :new do
+  #  post :send_message
+  #end
+  get "contact_form/new", as: :contact_form
+  post "contact_form/send_message"
   
   visualize if Rails.env.development?
 end

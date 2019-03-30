@@ -1,4 +1,9 @@
 ru:
+  contact_form:
+    new:
+      title: "Форма обратной связи"
+    send_message:
+      successfully_sent: "Сообщение успешно отправлено"
   services:
     description: "Вопрос о %{title} из TestGuru"
   test_passages:
@@ -109,6 +114,7 @@ ru:
   shared:
     header:
       admin_panel: "В панель администрирования"
+      contact_us: "Форма обратной связи"
     welcome_message: "Добро пожаловать"
     user_name_addition: "Гуру"
     logout: "Выйти"
@@ -120,5 +126,6 @@ ru:
   helpers:
     submit:
       submit: "Сохранить"
+      send: "Отправить сообщение"
     buttons:
       start: "Начать"

@@ -1,0 +1,22 @@
+en:
+  activemodel:
+    attributes:
+      contact_form:
+        name: "Your name"
+        email: "Email"
+        message_body: "Message body"
+
+    errors:
+      models:
+        contact_form:
+          attributes:
+            name:
+              blank: "can't be blank"
+            email:
+              blank: "can't be blank"
+              invalid: "is invalid"
+            message_body:
+              blank: "can't be blank"
+
+      messages:
+        model_invalid: 'Validation failed: %{errors}'

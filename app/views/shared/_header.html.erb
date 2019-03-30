@@ -1,11 +1,13 @@
 <header>
   <nav class="navbar navbar-light bg-light">
     <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
-
+    
     <% if current_user&.admin? %>
       <%= link_to t(".admin_panel"), admin_tests_path, class: 'navitem navlink' %>
     <% end %>
-    
+
+    <%= link_to t('.contact_us'), contact_form_path, class: 'navitem navlink' %>
+
     <span class="navbar-text">
       <% unless auth_pages? %>  
         <% if user_signed_in? %>  

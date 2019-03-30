@@ -23,6 +23,7 @@ ru:
         body: "Тело ответа"
         correct: "Признак правильности"
       
+
     errors:
       messages:
         blank: "не может быть пустым"

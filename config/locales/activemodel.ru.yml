@@ -1,0 +1,23 @@
+ru:
+  activemodel:
+    
+    attributes:
+      contact_form:
+        name: "Ваше имя"
+        email: "Email"
+        message_body: "Сообщение"
+    
+    errors:
+      models:
+        contact_form:
+          attributes:
+            name:
+              blank: "не может быть пустым"
+            email:
+              blank: "не может быть пустым"
+              invalid: "не соответствует формату"
+            message_body:
+              blank: "не может быть пустым"
+
+      messages:
+        model_invalid: "Возникли ошибки: %{errors}"
