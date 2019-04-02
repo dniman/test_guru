@@ -29,11 +29,11 @@ Rails.application.routes.draw do
     end
   end
       
-  #resources :contact_form, only: :new do
-  #  post :send_message
-  #end
-  get "contact_form/new", as: :contact_form
-  post "contact_form/send_message"
+  resources :contact_form, only: :new do
+    collection do
+      post :send_message
+    end
+  end
   
   visualize if Rails.env.development?
 end
