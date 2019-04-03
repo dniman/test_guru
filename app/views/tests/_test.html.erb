@@ -2,6 +2,8 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <% if user_signed_in? %>
-    <td><%= button_to t("helpers.buttons.start"), start_test_path(test) %></td>
+    <td>
+      <%= button_to t("helpers.buttons.start"), start_test_path(test), { class: "btn btn-primary" } %>
+    </td>
   <% end %>
 </tr>

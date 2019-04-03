@@ -28,7 +28,13 @@ Rails.application.routes.draw do
       patch :update_inline, on: :member
     end
   end
+      
+  resources :contact_form, only: :new do
+    collection do
+      post :send_message
+    end
+  end
   
-  visualize
+  visualize if Rails.env.development?
 end
 

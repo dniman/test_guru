@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_125816) do
+ActiveRecord::Schema.define(version: 2019_03_27_192140) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -18,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_125816) do
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["body"], name: "index_answers_on_body"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -32,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_125816) do
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["body"], name: "index_questions_on_body"
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
@@ -57,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_125816) do
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
+    t.index ["title"], name: "index_tests_on_title"
   end
 
   create_table "user_gists", force: :cascade do |t|

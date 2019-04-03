@@ -23,8 +23,10 @@ ru:
         body: "Тело ответа"
         correct: "Признак правильности"
       
+
     errors:
       messages:
         blank: "не может быть пустым"
         taken: "yже существует"
         required: "является обязательным параметром"
+        record_invalid: "Возникли ошибки: %{errors}"

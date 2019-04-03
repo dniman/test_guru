@@ -8,7 +8,8 @@ class TestPassage < ApplicationRecord
   TEST_PASSED = 85
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
+    ids = answer_ids.select { |item| item unless item.empty? }
+    if correct_answer?(ids)
       self.correct_questions += 1
     end
 

@@ -1,4 +1,9 @@
 en:
+  contact_form:
+    new:
+      title: "Contact form"
+    send_message: 
+      successfully_sent: "Сообщение успешно отправлено"
   services:
     description: "A question about %{title} from TestGuru"
   test_passages:
@@ -109,6 +114,7 @@ en:
   shared:
     header:
       admin_panel: "To Admin Panel"
+      contact_us: "Contact us"
     welcome_message: "Welcome"
     user_name_addition: "Guru"
     logout: "Logout"
@@ -117,9 +123,9 @@ en:
     footer:
       description: "study project in online school"
 
-
   helpers:
     submit:
       submit: "Save"
+      send: "Send message"
     buttons:
       start: "Start"

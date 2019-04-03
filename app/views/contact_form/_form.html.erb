@@ -1,0 +1,22 @@
+    <%= form_with model: @form, url: send_message_contact_form_index_path, local: true do |f| %>
+
+      <%= render 'shared/errors', resource: @form %>
+
+      <div class="form-group">
+        <p>
+          <%= f.label :name %><br>
+          <%= f.text_field :name, id: :name, class: 'form-control' %>
+        </p>
+      
+        <p>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
+        </p>
+  
+        <p>
+          <%= f.label :message_body %><br>
+          <%= f.text_area :message_body, id: :message_body, class: 'form-control', rows: 7, cols: 60  %>
+        </p>
+      </div>
+      <%= f.submit t("helpers.submit.send") %>
+    <% end %>
