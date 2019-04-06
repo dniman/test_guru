@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'   
   has_many :gists, class_name: 'UserGist'
-
+  has_many :user_badges, class_name: 'UserBadge'
+  has_many :badges, through: :user_badges
+  
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :first_name, presence: true
   validates :last_name, presence: true
