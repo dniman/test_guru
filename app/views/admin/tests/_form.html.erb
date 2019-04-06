@@ -14,7 +14,7 @@
 
   <p>
     <%= form.label :level %><br>
-    <%= form.text_field :level, id: :test_level %>
+    <%= form.collection_select :level, test_levels, :first, :last %>
   </p><br>
 
   <%= form.submit t("helpers.submit.submit") %>

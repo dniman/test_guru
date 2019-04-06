@@ -5,7 +5,7 @@
 
 <p>
   <strong><%= t(".level") %></strong>
-  <%= @test.level %>
+  <%= t("test_levels.#{test_level(@test)}") %>
 </p>
           
 <h2><%= t(".questions") %></h2>

@@ -3,7 +3,7 @@
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test :test %>
   </td>
-  <td class="align-middle"><%= test_level(test) %></td>
+  <td class="align-middle"><%= t("test_levels.#{test_level(test)}") %></td>
 
   <% if user_signed_in? %>
     <td class="align-middle"><%= test.questions.size %></td>
