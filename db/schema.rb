@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_04_06_134905) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
