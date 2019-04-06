@@ -39,4 +39,11 @@ answers = Answer.create([{ body: 'Answer 1', correct: false, question: questions
                          { body: 'Answer 2', correct: false, question: questions.last },
                          { body: 'Answer 3', correct: false, question: questions.last }])
 
+badges = Badge.create([ { name: 'new', file_name: 'new.svg' },
+                        { name: 'best', file_name: 'best.svg' },
+                        { name: 'english', file_name: 'english.svg' },
+                        { name: 'level0', file_name: 'level0.svg' },
+                        { name: 'level1', file_name: 'level1.svg' },
+                        { name: 'level2', file_name: 'level2.svg' },
+                        { name: 'level3', file_name: 'level3.svg' }])
 
