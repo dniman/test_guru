@@ -6,6 +6,8 @@ ru:
       question: "Вопрос"
       answer: "Ответ"
       test_passage: "Прохождение теста"
+      badge: "Значок"
+      badge_rule: "Правило выдачи значка"
 
     attributes:
       category:
@@ -23,6 +25,10 @@ ru:
         body: "Тело ответа"
         correct: "Признак правильности"
       
+      badge:
+        name: "Наименование"
+        file_name: "Наименование файла"
+        rule: "Правило выдачи значка"
 
     errors:
       messages:

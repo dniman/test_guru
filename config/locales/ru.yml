@@ -33,6 +33,7 @@ ru:
       welcome_message: "Добро пожаловать" 
       user_email_addition: "Гуру"
       logout: "Выйти"
+      badges: "Значки"
 
     answers:
       answer:
@@ -105,6 +106,35 @@ ru:
         back: "Назад"
       form_inline:
         submit: "OK"
+
+    badges:
+      badge:
+        show: "Открыть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+
+      index:
+        new_badge: "Создать значок"
+        title: "Значки"
+        name: "Наименование"
+        file_name: "Наименование файла"
+        actions: "Операции"
+
+      show:
+        name: "Наименование"
+        file_name: "Имя файла" 
+        badge_rule_title: "Правила выдачи значков"
+        add_rule: "Добавить правило"
+        back: "Назад"
+
+      edit:
+        title: "Редактирование значка"
+        back: "Назад"
+
+      new:
+        title: "Создать новый значок"
+        back: "Назад"
 
   layouts:
     admin:

@@ -12,7 +12,7 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+    @test_passage.accept!(test_passage_params[:answer_ids])
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
@@ -43,6 +43,6 @@ class TestPassagesController < ApplicationController
   end
 
   def test_passage_params
-    params.permit(:answer_ids)
+    params.permit(answer_ids: [])
   end
 end
