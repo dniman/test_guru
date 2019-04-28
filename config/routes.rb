@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     end
   end
       
+  resources :badges, only: :index
+
   resources :contact_form, only: :new do
     collection do
       post :send_message

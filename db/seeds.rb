@@ -11,46 +11,122 @@ admin = Admin.new( first_name: 'Some', last_name: 'Admin', email: 'some.admin@ex
 admin.skip_confirmation!
 admin.save!
 
-categories = Category.create([{ title: 'Category 1' }])
+categories = Category.create([{ title: 'Английский' }])
 
-tests = Test.create([{ title: 'Test 1', level: 0, category: categories.first, author: admin },
-                     { title: 'Test 2', level: 1, category: categories.first, author: admin },
-                     { title: 'Test 3', level: 1, category: categories.first, author: admin },
-                     { title: 'Test 4', level: 2, category: categories.first, author: admin }])
+tests = Test.create([
+  { title: 'Тест 1', level: 0, category: categories.first, author: admin },
+  { title: 'Тест 2', level: 1, category: categories.first, author: admin },
+  { title: 'Тест 3', level: 2, category: categories.first, author: admin },
+  { title: 'Тест 4', level: 3, category: categories.first, author: admin }
+])
 
-questions = Question.create([{ body: 'Question 1', test: tests.first },
-                             { body: 'Question 2', test: tests.first },
-                             { body: 'Question 3', test: tests.first },
-                             { body: 'Question 4', test: tests.first }])
+questions = Question.create([
+  { body: 'My favourite sport …… tennis.', test: tests.first },
+  { body: 'Roberto is Italian. He’s …… Italy.', test: tests.first },
+  { body: '…… you help me, please?', test: tests.first },
+  { body: 'Moscow is the …… of Russia.', test: tests.first },
+                  
+  { body: 'Anna and Kate _________ to the cinema last Sunday.', test: tests[1] },
+  { body: 'I had breakfast ________ ago.', test: tests[1] },
+  { body: 'When _____ you last _______ tennis?', test: tests[1] },
+  { body: '______ you like _______ coffee?', test: tests[1] },
 
-answers = Answer.create([{ body: 'Answer 1', correct: false, question: questions.first },
-                         { body: 'Answer 2', correct: true, question: questions.first },
-                         { body: 'Answer 3', correct: false, question: questions.first },
+  { body: 'The more exercise I do, _______ I get.', test: tests[2] },
+  { body: 'When I arrived at the party there was _______ there. They\'d all gone home.', test: tests[2] },
+  { body: 'My parents\' wedding anniversary, _______ we celebrate every year, is an opportunity for all the family to get together.', test: tests[2] },
+  { body: 'Did you and Jessica enjoy _______ at the concert last night?', test: tests[2] },
+
+  { body: 'I\'m fully aware _______ it', test: tests[3] },
+  { body: 'This kind of behaviour is very typical _______ him', test: tests[3] },
+  { body: 'This service is available _______ you now', test: tests[3] },
+  { body: 'He\'s accustomed _________________ in poverty', test: tests[3]} 
+])
+
+answers = Answer.create([
+  { body: 'are', correct: false, question: questions.first },
+  { body: 'is', correct: true, question: questions.first },
+  { body: 'be', correct: false, question: questions.first },
                          
-                         { body: 'Answer 1', correct: true, question: questions[1] }, 
-                         { body: 'Answer 2', correct: false, question: questions[1] },
-                         { body: 'Answer 3', correct: false, question: questions[1] },
+  { body: 'from', correct: true, question: questions[1] }, 
+  { body: 'to', correct: false, question: questions[1] },
+  { body: 'at', correct: false, question: questions[1] },
                          
-                         { body: 'Answer 1', correct: false, question: questions[2] },
-                         { body: 'Answer 2', correct: false, question: questions[2] },
-                         { body: 'Answer 3', correct: true, question: questions[2] },
+  { body: 'Have', correct: false, question: questions[2] },
+  { body: 'Do', correct: false, question: questions[2] },
+  { body: 'Can', correct: true, question: questions[2] },
 
-                         { body: 'Answer 1', correct: true, question: questions.last },
-                         { body: 'Answer 2', correct: false, question: questions.last },
-                         { body: 'Answer 3', correct: false, question: questions.last }])
+  { body: 'country', correct: false, question: questions[3] },
+  { body: 'nationality', correct: false, question: questions[3] },
+  { body: 'capital', correct: true, question: questions[3] },
 
-badges = Badge.create([ { name: 'new', file_name: 'new.svg' },
-                        { name: 'best', file_name: 'best.svg' },
-                        { name: 'english', file_name: 'english.svg' },
-                        { name: 'level0', file_name: 'level0.svg' },
-                        { name: 'level1', file_name: 'level1.svg' },
-                        { name: 'level2', file_name: 'level2.svg' },
-                        { name: 'level3', file_name: 'level3.svg' }])
+  { body: 'didn\'t went', correct: false, question: questions[4] },
+  { body: 'don\'t go', correct: false, question: questions[4] },
+  { body: 'didn\'t go', correct: true, question: questions[4] },
+                         
+  { body: 'this morning', correct: false, question: questions[5] },
+  { body: 'three hours', correct: true, question: questions[5] },
+  { body: '7.30 a.m.', correct: false, question: questions[5] },
+                         
+  { body: 'did/play', correct: true, question: questions[6] },
+  { body: 'do/play', correct: false, question: questions[6] },
+  { body: 'did/played', correct: false, question: questions[6] },
+                         
+  { body: 'do/any', correct: false, question: questions[7] },
+  { body: 'are/some', correct: false, question: questions[7] },
+  { body: 'whould/some', correct: true, question: questions[7] },
+                         
+  { body: 'fitter', correct: false, question: questions[8] },
+  { body: 'the fitter', correct: true, question: questions[8] },
+  { body: 'fittest', correct: false, question: questions[8] },
+  { body: 'the fittest', correct: false, question: questions[8] },
+                         
+  { body: 'Nobody', correct: true, question: questions[9] },
+  { body: 'Somebody', correct: false, question: questions[9] },
+  { body: 'Anybody', correct: false, question: questions[9] },
+  { body: 'Everybody', correct: false, question: questions[9] },
+                         
+  { body: 'where', correct: false, question: questions[10] },
+  { body: 'who', correct: false, question: questions[10] },
+  { body: 'whose', correct: false, question: questions[10] },
+  { body: 'which', correct: true, question: questions[10] },
+                         
+  { body: 'yourself', correct: false, question: questions[11] },
+  { body: 'yourselves', correct: true, question: questions[11] },
+  { body: 'itself', correct: false, question: questions[11] },
+  { body: 'themselves', correct: false, question: questions[11] },
+                         
+  { body: 'from', correct: false, question: questions[12] },
+  { body: 'about', correct: false, question: questions[12] },
+  { body: 'of', correct: true, question: questions[12] },
+                         
+  { body: 'about', correct: false, question: questions[13] },
+  { body: 'of', correct: false, question: questions[13] },
+  { body: 'for', correct: true, question: questions[13] },
+                         
+  { body: 'to', correct: true, question: questions[14] },
+  { body: 'for', correct: false, question: questions[14] },
+  { body: 'from', correct: false, question: questions[14] },
+                         
+  { body: 'to live', correct: false, question: questions[15] },
+  { body: 'to living', correct: true, question: questions[15] },
+  { body: 'for living', correct: false, question: questions[15] }
+])
 
-badge_rules = BadgeRule.create([ { name: "Выдать значок после успешного прохождения нового теста" },
-                                               { name: "Выдать значок после успешного прохождения теста с первой попытки" },
-                                               { name: "Выдать значок после успешного прохождения всех тестов из категории English" },
-                                               { name: "Выдать значок после успешного прохождения всех тестов легкого уровня(level 0)" },
-                                               { name: "Выдать значок после успешного прохождения всех тестов начального уровня(level 1)"},
-                                               { name: "Выдать значок после успешного прохождения всех тестов продвинутого уровня(level 2)"},
-                                               { name: "Выдать значок после успешного прохождения всех тестов сложного уровня(leve 3)"}])
+badge_rules = BadgeRule.create([ 
+  { name: "Выдать значок после успешного прохождения теста с первой попытки" },
+  { name: "Выдать значок после успешного прохождения всех тестов из категории English" },
+  { name: "Выдать значок после успешного прохождения всех тестов легкого уровня(level 0)" },
+  { name: "Выдать значок после успешного прохождения всех тестов начального уровня(level 1)"},
+  { name: "Выдать значок после успешного прохождения всех тестов продвинутого уровня(level 2)"},
+  { name: "Выдать значок после успешного прохождения всех тестов сложного уровня(level 3)"}
+])
+
+badges = Badge.create([ 
+  { name: 'attempt', file_name: 'attempt.svg', badge_rule: badge_rules.first },
+  { name: 'english', file_name: 'english.svg', badge_rule: badge_rules[1] },
+  { name: 'level0', file_name: 'level_0.svg', badge_rule: badge_rules[2] },
+  { name: 'level1', file_name: 'level_1.svg', badge_rule: badge_rules[3] },
+  { name: 'level2', file_name: 'level_2.svg', badge_rule: badge_rules[4] },
+  { name: 'level3', file_name: 'level_3.svg', badge_rule: badge_rules.last }
+])
+

@@ -1,4 +1,10 @@
 ru:
+  badges:
+    index:
+      title: "Доступные значки"
+      badge: "Значок"
+      badge_rule: "Правило выдачи значка"
+      secondary_title: "Пользовательские значки"
   contact_form:
     new:
       title: "Форма обратной связи"
@@ -145,6 +151,7 @@ ru:
     header:
       admin_panel: "В панель администрирования"
       contact_us: "Форма обратной связи"
+      badges: "Значки"
     welcome_message: "Добро пожаловать"
     user_name_addition: "Гуру"
     logout: "Выйти"

@@ -1,4 +1,10 @@
 en:
+  badges:
+    index:
+      title: "Available badges"
+      badge: "badge icon"
+      badge_rule: "badge issuing rule"
+      secondary_title: "User badges"
   contact_form:
     new:
       title: "Contact form"
@@ -145,6 +151,7 @@ en:
     header:
       admin_panel: "To Admin Panel"
       contact_us: "Contact us"
+      badges: "Badges"
     welcome_message: "Welcome"
     user_name_addition: "Guru"
     logout: "Logout"
