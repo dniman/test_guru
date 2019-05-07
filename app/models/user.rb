@@ -35,26 +35,5 @@ class User < ApplicationRecord
     self.is_a?(Admin)
   end
 
-  def success_test_passages
-    test_passages(&:success?)
-  end
-
-  def attempt_rule(test)
-    test_passages.where(test: test).size.eql?(1) && success_test_passages.where(test: test).size.eql?(1) 
-  end
-
-  def category_rule(category)
-    success_test_passages.joins(:test).where("tests.category": Category.where(title: category)).size.eql?(Test.where("tests.category": Category.where(title: category)).size)
-  end
-
-  def level_rule(level)
-    success_test_passages.joins(:test).where("tests.level": level).size.eql?(Test.where(level: level).size) 
-  end
-
-  def assign_badge(test)
-    user_badges.create(badge: Badge.where(name: "attempt")[0]) if attempt_rule(test)
-    user_badges.create(badge: Badge.where(name: "english")[0]) if category_rule("Английский")
-    user_badges.create(badge: Badge.where(name: "level#{test.level}")[0]) if level_rule(test.level)
-  end
 end
 
