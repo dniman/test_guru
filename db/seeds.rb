@@ -112,21 +112,12 @@ answers = Answer.create([
   { body: 'for living', correct: false, question: questions[15] }
 ])
 
-badge_rules = BadgeRule.create([ 
-  { name: "Выдать значок после успешного прохождения теста с первой попытки" },
-  { name: "Выдать значок после успешного прохождения всех тестов из категории English" },
-  { name: "Выдать значок после успешного прохождения всех тестов легкого уровня(level 0)" },
-  { name: "Выдать значок после успешного прохождения всех тестов начального уровня(level 1)"},
-  { name: "Выдать значок после успешного прохождения всех тестов продвинутого уровня(level 2)"},
-  { name: "Выдать значок после успешного прохождения всех тестов сложного уровня(level 3)"}
-])
-
 badges = Badge.create([ 
-  { name: 'attempt', file_name: 'attempt.svg', badge_rule: badge_rules.first },
-  { name: 'english', file_name: 'english.svg', badge_rule: badge_rules[1] },
-  { name: 'level0', file_name: 'level_0.svg', badge_rule: badge_rules[2] },
-  { name: 'level1', file_name: 'level_1.svg', badge_rule: badge_rules[3] },
-  { name: 'level2', file_name: 'level_2.svg', badge_rule: badge_rules[4] },
-  { name: 'level3', file_name: 'level_3.svg', badge_rule: badge_rules.last }
+  { name: 'attempt', file_name: 'attempt.svg', rule_type: Badge.rule_types[:attempt], rule_value: '1' },
+  { name: 'english', file_name: 'english.svg', rule_type: Badge.rule_types[:category_by], rule_value: 'Английский' },
+  { name: 'level0', file_name: 'level_0.svg', rule_type: Badge.rule_types[:level_by], rule_value: '0' },
+  { name: 'level1', file_name: 'level_1.svg', rule_type: Badge.rule_types[:level_by], rule_value: '1' },
+  { name: 'level2', file_name: 'level_2.svg', rule_type: Badge.rule_types[:level_by], rule_value: '2' },
+  { name: 'level3', file_name: 'level_3.svg', rule_type: Badge.rule_types[:level_by], rule_value: '3' }
 ])
 

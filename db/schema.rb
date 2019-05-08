@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_26_115930) do
+ActiveRecord::Schema.define(version: 2019_04_06_144650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,20 +25,14 @@ ActiveRecord::Schema.define(version: 2019_04_26_115930) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "badge_rules", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "badges", force: :cascade do |t|
     t.string "name", null: false
     t.string "file_name"
+    t.integer "rule_type", default: 0, null: false
+    t.string "rule_value", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "rule_id"
     t.index ["name"], name: "index_badges_on_name", unique: true
-    t.index ["rule_id"], name: "index_badges_on_rule_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -127,7 +121,6 @@ ActiveRecord::Schema.define(version: 2019_04_26_115930) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badges", "badge_rules", column: "rule_id"
   add_foreign_key "questions", "tests"
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"

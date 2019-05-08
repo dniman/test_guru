@@ -1,5 +1,5 @@
 class Badge < ApplicationRecord
-  belongs_to :badge_rule, class_name: 'BadgeRule', foreign_key: 'rule_id'
-
+  enum rule_types: { empty: 0, attempt: 1, category_by: 2, level_by: 3 }
+  
   validates :name, presence: true
 end

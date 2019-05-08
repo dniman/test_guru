@@ -14,7 +14,6 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(test_passage_params[:answer_ids])
     if @test_passage.completed?
-      byebug
       AssignBadgeHandler.execute(@test_passage.test, @test_passage.user)
       #current_user.assign_badge(@test_passage.test)
       TestsMailer.completed_test(@test_passage).deliver_now
