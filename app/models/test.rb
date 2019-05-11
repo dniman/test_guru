@@ -14,7 +14,7 @@ class Test < ApplicationRecord
   scope :high_levels, -> { where(level: HIGH_DIFFICULTY) }
   scope :category_tests, ->(title) { joins(:category).where(category: { title: title }) }
   scope :available_tests, -> { joins(:questions).group("tests.id") }
-                               
+  
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 

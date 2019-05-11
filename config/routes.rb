@@ -27,8 +27,13 @@ Rails.application.routes.draw do
     resources :tests do
       patch :update_inline, on: :member
     end
+    resources :badges do
+      resources :badge_rules, shallow: true, except: [:index]
+    end
   end
       
+  resources :badges, only: :index
+
   resources :contact_form, only: :new do
     collection do
       post :send_message

@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+  <div class="col mx-auto">
+    <%= content_tag :h2, t(".title"), class: "mt-2 text-center" %>
+    
+    <%= render 'shared/errors', resource: @badge if @badge %>
+
+    <table class="table" style="margin: 0 auto">
+      <thead>
+        <tr>
+          <th scope="col"><%= t(".badge") %></th>
+          <th scope="col"><%= t(".badge_rule") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @badges %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col mx-auto">
+    <%= content_tag :h2, t(".secondary_title"), class: "mt-2 text-center" %>
+    
+    <ul class="list-inline">
+        <%= render @user_badges %>
+    </ul>   
+  </div>
+</div>

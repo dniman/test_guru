@@ -1,0 +1,6 @@
+ru:
+  test_levels:
+    easy: "Легкий"
+    elementary: "Начальный"
+    advanced: "Продвинутый"
+    hard: "Сложный"

@@ -1,4 +1,10 @@
 ru:
+  badges:
+    index:
+      title: "Доступные значки"
+      badge: "Значок"
+      badge_rule: "Правило выдачи значка"
+      secondary_title: "Пользовательские значки"
   contact_form:
     new:
       title: "Форма обратной связи"
@@ -33,6 +39,7 @@ ru:
       welcome_message: "Добро пожаловать" 
       user_email_addition: "Гуру"
       logout: "Выйти"
+      badges: "Значки"
 
     answers:
       answer:
@@ -106,6 +113,35 @@ ru:
       form_inline:
         submit: "OK"
 
+    badges:
+      badge:
+        show: "Открыть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+
+      index:
+        new_badge: "Создать значок"
+        title: "Значки"
+        name: "Наименование"
+        file_name: "Наименование файла"
+        actions: "Операции"
+
+      show:
+        name: "Наименование"
+        file_name: "Имя файла" 
+        badge_rule_title: "Правила выдачи значков"
+        add_rule: "Добавить правило"
+        back: "Назад"
+
+      edit:
+        title: "Редактирование значка"
+        back: "Назад"
+
+      new:
+        title: "Создать новый значок"
+        back: "Назад"
+
   layouts:
     admin:
       head:
@@ -115,6 +151,7 @@ ru:
     header:
       admin_panel: "В панель администрирования"
       contact_us: "Форма обратной связи"
+      badges: "Значки"
     welcome_message: "Добро пожаловать"
     user_name_addition: "Гуру"
     logout: "Выйти"

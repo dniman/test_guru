@@ -6,6 +6,10 @@
       <%= link_to t(".admin_panel"), admin_tests_path, class: 'navitem navlink' %>
     <% end %>
 
+    <% if user_signed_in? %>
+      <%= link_to t('.badges'), badges_path, class: 'navitem navlink' %>
+    <% end %>
+
     <%= link_to t('.contact_us'), new_contact_form_path, class: 'navitem navlink' %>
 
     <span class="navbar-text">

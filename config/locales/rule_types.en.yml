@@ -1,0 +1,6 @@
+en:
+  rule_types:
+    empty: ""
+    attempt: "Issue a badge after successfully passing the test on some attempt"
+    category_by: "Issue a badge after successfully passing all tests from some category"
+    level_by: "Issue a badge after successfully passing all tests of some level"
