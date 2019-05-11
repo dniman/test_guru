@@ -1,10 +1,16 @@
 # assign_badge_handler.rb
+require 'forwardable'
 
 class AssignBadgeHandler
-  attr_reader :user, :test
+  extend Forwardable
 
-  def self.execute(test, user)
-    self.new(test, user).tap do |handler|
+  attr_reader :test
+
+  def_delegators :@user, :user_badges, :test_passages
+  def_delegator :@test, :test_level
+
+  def self.call(test, user)
+    new(test, user).tap do |handler|
       handler.assign_badge
     end
   end
@@ -16,12 +22,12 @@ class AssignBadgeHandler
 
   def assign_badge
     Badge.all.each do |item|
-      user.user_badges.create(badge: item) if assigning_method(item.rule_type, item.rule_value)
+      user_badges.create(badge: item) if assigning_method(item.rule_type, item.rule_value)
     end
   end
 
   def rule_method(rule_type)
-    "#{Badge.rule_types.map { |k,v| k }[rule_type]}_rule"
+    "#{Badge.rule_types.key(rule_type)}_rule"
   end
 
   def assigning_method(rule_type, rule_value)
@@ -29,11 +35,11 @@ class AssignBadgeHandler
   end
 
   def success_test_passages
-    user.test_passages(&:success?)
+    test_passages(&:success?)
   end
 
   def attempt_rule(value)
-    user.test_passages.where(test: test).size.eql?(value.to_i) && success_test_passages.where(test: test).size.eql?(value.to_i) 
+    test_passages.where(test: test).size.eql?(value.to_i) && success_test_passages.where(test: test).size.eql?(value.to_i) 
   end
 
   def category_by_rule(category)
@@ -41,7 +47,7 @@ class AssignBadgeHandler
   end
 
   def level_by_rule(level)
-    test.level.eql?(level.to_i) && success_test_passages.joins(:test).where("tests.level": level).size.eql?(Test.where(level: level).size) 
+    level.eql?(level.to_i) && success_test_passages.joins(:test).where("tests.level": level).size.eql?(Test.where(level: level).size) 
   end
 
   def empty_rule(level)
