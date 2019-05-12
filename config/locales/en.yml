@@ -111,7 +111,7 @@ en:
         action: "Actions"
         edit: "Edit"
         back: "Back"
-      form_inline:
+      test_title_inline:
         submit: "OK"
       test_time_inline:
         submit: "OK"

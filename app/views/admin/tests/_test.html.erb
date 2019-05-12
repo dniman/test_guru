@@ -1,7 +1,7 @@
 <tr>
   <td class="align-middle">
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
-    <%= render 'form_inline', test: test == @test ? @test :test %>
+    <%= render 'test_title_inline', test: test == @test ? @test :test %>
   </td>
   <td class="align-middle">
     <%= content_tag :span, test.test_time.strftime("%T"), class: 'test-time', data: { test_id: test.id } %>

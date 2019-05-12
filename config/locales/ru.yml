@@ -111,7 +111,7 @@ ru:
         action: "Операции"
         edit: "Редактировать"
         back: "Назад"
-      form_inline:
+      test_title_inline:
         submit: "OK"
       test_time_inline:
         submit: "OK"
