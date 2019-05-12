@@ -1,14 +1,12 @@
 class TestPassagesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_test_passage, only: %i[show update result gist] 
+  before_action :set_test_passage, only: %i[show update result gist update_start_time] 
   
   def show
-
   end
 
   def result
-
   end
 
   def update
@@ -37,6 +35,14 @@ class TestPassagesController < ApplicationController
     redirect_to @test_passage, flash_options
   end
 
+
+  def update_start_time
+    #byebug
+    #@test_passage.update(start_time: Time.at(test_passage_params[:start_time].to_f / 1000.0))
+    #@test_passage.update_columns(start_time: Time.at(test_passage_params[:start_time].to_f / 1000.0))
+    @test_passage.update_columns(start_time: Time.parse(test_passage_params[:start_time]).getlocal)
+  end
+
   private
 
   def set_test_passage
@@ -44,6 +50,6 @@ class TestPassagesController < ApplicationController
   end
 
   def test_passage_params
-    params.permit(answer_ids: [])
+    params.permit(:start_time, answer_ids: [])
   end
 end

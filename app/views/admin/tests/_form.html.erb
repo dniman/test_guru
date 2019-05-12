@@ -17,5 +17,10 @@
     <%= form.collection_select :level, test_levels, :first, :last %>
   </p><br>
 
+  <p>
+    <%= form.label :test_time %><br>
+    <%= form.time_select :test_time, { value: @test.test_time, include_seconds: true }, {} %>
+  </p>
+
   <%= form.submit t("helpers.submit.submit") %>
 <% end %>

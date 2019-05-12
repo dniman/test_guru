@@ -98,6 +98,7 @@ ru:
         gist_question: "Вопрос"
         gist_url: "Gist URL"
         gist_user: "Пользователь"
+        test_time: "Время прохождения теста"
       new:
         create_new_test: "Создать Новый тест"
         back: "Назад"
@@ -111,6 +112,8 @@ ru:
         edit: "Редактировать"
         back: "Назад"
       form_inline:
+        submit: "OK"
+      test_time_inline:
         submit: "OK"
 
     badges:

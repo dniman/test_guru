@@ -98,6 +98,7 @@ en:
         gist_question: "Question"
         gist_url: "Gist URL"
         gist_user: "User"
+        test_time: "Test time"
       new:
         create_new_test: "Create New Test"
         back: "Back"
@@ -111,6 +112,8 @@ en:
         edit: "Edit"
         back: "Back"
       form_inline:
+        submit: "OK"
+      test_time_inline:
         submit: "OK"
 
     badges:
