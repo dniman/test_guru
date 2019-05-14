@@ -2,13 +2,12 @@ class TestPassagesController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist] 
+  before_action :check_timer, only: :show
   
   def show
-
   end
 
   def result
-
   end
 
   def update
@@ -44,6 +43,10 @@ class TestPassagesController < ApplicationController
   end
 
   def test_passage_params
-    params.permit(answer_ids: [])
+    params.permit(:start_time, answer_ids: [])
+  end
+
+  def check_timer
+    redirect_to result_test_passage_path(@test_passage), notice: t('.time_expired') if @test_passage.time_expired?
   end
 end

@@ -6,5 +6,4 @@ module TestPassagesHelper
       t(".test_failed", correct_questions: test_passage.correct_questions)
     end
   end
-
 end

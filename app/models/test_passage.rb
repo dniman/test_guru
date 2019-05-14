@@ -32,6 +32,14 @@ class TestPassage < ApplicationRecord
     correct_questions/test.questions.count * 100.0
   end
 
+  def time_expired?
+    seconds < 0 ? true : false 
+  end
+
+  def seconds
+    return 0 unless test.timer
+    -1 * (Time.current - (created_at + test.timer.seconds_since_midnight))
+  end
   private
 
   def before_save_set_next_question

@@ -18,6 +18,14 @@
   <b><%= t(".total_questions", test_questions_count: @test_passage.test.questions.count) %></b>
 <p>
 
+<%= content_tag :p, 
+                "", 
+                id: 'timer', 
+                data: { 
+                  seconds: @test_passage.seconds,
+                  redirect_path: result_test_passage_path(@test_passage),
+                } %>
+
 <b>
   <%= @test_passage.question_num %>.<%= @test_passage.current_question.body %>
 </b>
