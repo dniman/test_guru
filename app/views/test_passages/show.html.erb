@@ -19,13 +19,11 @@
 <p>
 
 <%= content_tag :p, 
-                show_time(@test_passage), 
+                "", 
                 id: 'timer', 
                 data: { 
-                  start_time: @test_passage.start_time.to_time.iso8601,
-                  end_time: @test_passage.end_time.to_time.iso8601,
+                  seconds: @test_passage.seconds,
                   redirect_path: result_test_passage_path(@test_passage),
-                  update_start_time_path: update_start_time_test_passage_path(@test_passage) 
                 } %>
 
 <b>

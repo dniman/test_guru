@@ -20,7 +20,6 @@ Rails.application.routes.draw do
     member do
       get :result
       post :gist
-      post :update_start_time
     end
   end
 

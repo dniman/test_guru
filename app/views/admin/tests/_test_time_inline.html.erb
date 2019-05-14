@@ -3,6 +3,6 @@
               local: true, 
               class: 'form-inline hide', 
               data: { test_id: test.id } do |form| %>
-  <%= form.time_select :test_time, { value: test.test_time, include_seconds: true }, {} %>
+  <%= form.time_select :timer, { value: test.timer, include_seconds: true }, {} %>
   <%= form.submit t('.submit'), class: 'btn btn-primary btn-sm ml-2' %>
 <% end %>

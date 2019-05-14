@@ -8,8 +8,7 @@ class TestsController < ApplicationController
   end
 
   def start
-    time = Time.parse("00:00:00")
-    current_user.test_passages.create(test: @test, start_time: time, end_time: time + @test.test_time.seconds_since_midnight)
+    current_user.test_passages.create(test: @test)
     redirect_to current_user.test_passage(@test)
   end
 
