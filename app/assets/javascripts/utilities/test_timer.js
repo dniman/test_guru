@@ -9,15 +9,16 @@ document.addEventListener('turbolinks:load', function() {
     if (seconds > 0) {
       var x = setInterval(function() {
         var now = new Date().getTime();
-        showTimer(endTime - now); 
+        var offset = endTime - now;
+        showTimer(offset); 
         
-        if (seconds < 0) {
+        if (offset <= 0) {
           clearInterval(x);
           window.location.replace(control.dataset.redirectPath);
           return;
         }
 
-        seconds -= 1;
+        control.dataset.seconds -= 1;
       }, 1000)
     }
   }
